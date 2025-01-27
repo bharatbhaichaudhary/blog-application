@@ -22,6 +22,11 @@ This is a simple blog application built using the MERN stack: MongoDB, Express, 
 - **Database**: MongoDB
 - **Authentication**: JWT (JSON Web Tokens) for admin authentication.
 
+### Prerequisites
+
+- Node.js and npm installed
+- MongoDB instance running
+
 ## Installation
 
 **Frontend**
@@ -39,11 +44,6 @@ cd server
 npm i
 npm start
 ```
-
-### Prerequisites
-
-- Node.js and npm installed
-- MongoDB instance running
 
 ### Clone the Repository
 
