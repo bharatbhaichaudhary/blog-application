@@ -42,7 +42,7 @@ const Register = () => {
       </h4>
       <TextField
         id="outlined-basic"
-        label="userName"
+        label="User name"
         variant="outlined"
         sx={{ marginTop: "20px" }}
         onChange={handelChenge}
@@ -51,7 +51,7 @@ const Register = () => {
       />
       <TextField
         id="outlined-basic"
-        label="email"
+        label="Email"
         variant="outlined"
         sx={{ marginTop: "20px" }}
         onChange={handelChenge}

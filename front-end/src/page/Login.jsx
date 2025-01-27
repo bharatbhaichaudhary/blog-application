@@ -47,7 +47,7 @@ const Login = () => {
         </h4>
         <TextField
           id="outlined-basic"
-          label="email"
+          label="Email"
           variant="outlined"
           sx={{
             marginTop: "20px",
