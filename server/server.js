@@ -16,6 +16,9 @@ app.use(cors());
 
 // api endpoints
 
+app.get("/", (req, res) => {
+  res.send("dskjc");
+});
 app.use("/api/user", userRoute);
 app.use("/api/blog", blogRouter);
 
