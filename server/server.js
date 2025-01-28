@@ -25,6 +25,7 @@ app.get("/api", (req, res) => {
 });
 app.get("/blog", async (req, res) => {
   try {
+    
     const blog = await Blog.find();
 
     res.status(200).json({ success: true, blog });
