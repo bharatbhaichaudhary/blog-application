@@ -19,6 +19,12 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("dskjc");
 });
+app.get("/api", (req, res) => {
+  res.send("dskjc/api");
+});
+app.get("/blog", (req, res) => {
+  res.send("dskjc/api");
+});
 app.use("/api/user", userRoute);
 app.use("/api/blog", blogRouter);
 
