@@ -9,6 +9,9 @@ function EditeBlog() {
   const [input, setInput] = useState({ title: "", tags: "", content: "" });
   const parmas = useParams();
   const navigate = useNavigate();
+
+  const SERVER_URI = import.meta.env.VITE_SERVER_URL
+
   const handelChenge = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -18,7 +21,7 @@ function EditeBlog() {
   const getBlogDetail = async () => {
     try {
       const respons = await axios.get(
-        `http://localhost:4000/api/blog/${parmas.id}`
+        `${SERVER_URI}/api/blog/${parmas.id}`
       );
       setInput(respons.data.blog);
     } catch (error) {
@@ -32,7 +35,7 @@ function EditeBlog() {
   const handelSubmit = async (e) => {
     e.preventDefault();
     const data = await axios.put(
-      `http://localhost:4000/api/blog/blogEdit/${parmas.id}`,
+      `${SERVER_URI}/api/blog/blogEdit/${parmas.id}`,
       input,
       {
         headers: {

@@ -15,13 +15,14 @@ import EditIcon from "@mui/icons-material/Edit";
 
 const AdminBlog = () => {
   const [data, setData] = useState([]);
-
   const token = localStorage.getItem("token");
+
+  const SERVER_URI = import.meta.env.VITE_SERVER_URL;
 
   const blogData = async () => {
     try {
       const respose = await axios.get(
-        "http://localhost:4000/api/blog/blogListByUser",
+        `${SERVER_URI}/api/blog/blogListByUser`,
         {
           headers: {
             Authorization: token,
@@ -41,7 +42,7 @@ const AdminBlog = () => {
 
   const deletBlog = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/blog/blogDelete/${id}`, {
+      await axios.delete(`${SERVER_URI}/api/blog/blogDelete/${id}`, {
         headers: {
           Authorization: token,
         },

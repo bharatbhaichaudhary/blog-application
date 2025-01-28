@@ -7,7 +7,10 @@ import axios from "axios";
 function AddBlog() {
   const [input, setInput] = useState({ title: "", tags: "", content: "" });
   const token = localStorage.getItem("token");
+
+  const SERVER_URI = import.meta.env.VITE_SERVER_URL
   const handelChenge = (e) => {
+
     const name = e.target.name;
     const value = e.target.value;
     setInput({ ...input, [name]: value });
@@ -15,7 +18,7 @@ function AddBlog() {
   const handelSubmit = async (e) => {
     e.preventDefault();
     const data = await axios.post(
-      "http://localhost:4000/api/blog/blogAdd",
+      `${SERVER_URI}/api/blog/blogAdd`,
       input,
       {
         headers: {

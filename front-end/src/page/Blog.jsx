@@ -8,13 +8,13 @@ import axios from "axios";
 
 const Blog = () => {
   const [blogData, setBlogData] = useState({})
-  console.log("blogData", blogData);
-  
   const parmas = useParams()
+
+  const SERVER_URI = import.meta.env.VITE_SERVER_URL
 
   const getBlogDetail = async ()=>{
 try {
-  const respons = await axios.get(`http://localhost:4000/api/blog/${parmas.id}`)
+  const respons = await axios.get(`${SERVER_URI}/api/blog/${parmas.id}`)
   setBlogData(respons.data.blog);
   
 } catch (error) {

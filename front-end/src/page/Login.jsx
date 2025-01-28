@@ -7,8 +7,10 @@ import axios from "axios";
 
 const Login = () => {
   const [input, setInput] = useState({ email: "", password: "" });
-
   const neviget = useNavigate();
+
+  const SERVER_URI = import.meta.env.VITE_SERVER_URL
+  
 
   const handelChenge = (e) => {
     const name = e.target.name;
@@ -19,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await axios.post(
-        "http://localhost:4000/api/user/login",
+        `${SERVER_URI}/api/user/login`,
         input
       );
 

@@ -15,10 +15,12 @@ const BlogCart = () => {
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
 
+  const SERVER_URI = import.meta.env.VITE_SERVER_URL
+
   const blogData = async () => {
     try {
       const respose = await axios.get(
-        "http://localhost:4000/api/blog/blogList"
+        `${SERVER_URI}/api/blog/blogList`
       );
 
       setData(respose?.data?.blog || []);

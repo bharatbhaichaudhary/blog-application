@@ -7,6 +7,9 @@ import axios from "axios";
 
 const Register = () => {
   const [input, setInput] = useState({ username: "", email: "", password: "" });
+
+  const SERVER_URI = import.meta.env.VITE_SERVER_URL
+
   const handelChenge = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -15,10 +18,7 @@ const Register = () => {
   const handelSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = await axios.post(
-        "http://localhost:4000/api/user/register",
-        input
-      );
+      await axios.post(`${SERVER_URI}/api/user/register`, input);
       setInput({ username: "", email: "", password: "" });
       alert("register success");
     } catch (error) {
